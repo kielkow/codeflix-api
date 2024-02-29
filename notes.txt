@@ -1,0 +1,2 @@
+// Give permission to docker execute commands from path .docker
+chmod +x .docker/start-dev.sh

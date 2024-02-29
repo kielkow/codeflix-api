@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  codeflix-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: codeflix-api
+    container_name: codeflix-api
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+    networks:
+      - app-network
+    environment:
+      - HOST=${HOST}
+      - PORT=${PORT}
+      - NODE_ENV=${NODE_ENV}
+    command: ./.docker/start-dev.sh
+    restart: always
+
+networks:
+  app-network:
+    name: 'app-network'
+    driver: bridge

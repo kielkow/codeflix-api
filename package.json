@@ -1,0 +1,20 @@
+{
+  "name": "codeflix-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kielkow/codeflix-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kielkow/codeflix-api/issues"
+  },
+  "homepage": "https://github.com/kielkow/codeflix-api#readme"
+}
