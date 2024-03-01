@@ -55,20 +55,43 @@ export class Category {
         return this._updatedAt;
     }
 
-    set active(value: boolean) {
-        this._active = value;
-        this.touch();
-    }
-    set name(value: string) {
+    private set name(value: string) {
         this._name = value;
         this.touch();
     }
-    set description(value: string) {
+    private set description(value: string) {
         this._description = value;
+        this.touch();
+    }
+    private set active(value: boolean) {
+        this._active = value;
         this.touch();
     }
 
     private touch() {
         this._updatedAt = new Date();
+    }
+
+    public changeName(name: string): void {
+        this.name = name;
+    }
+    public changeDescription(description: string): void {
+        this.description = description;
+    }
+    public activate(): void {
+        this.active = true;
+    }
+    public deactivate(): void {
+        this.active = false;
+    }
+    public toObject(): CategoryProps {
+        return {
+            id: this._id,
+            name: this._name,
+            description: this._description,
+            active: this._active,
+            createdAt: this._createdAt,
+            updatedAt: this._updatedAt,
+        };
     }
 }
