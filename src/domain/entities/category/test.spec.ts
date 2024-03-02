@@ -41,5 +41,5 @@ describe('Entity: Category', () => {
         category.deactivate();
 
         expect(category.active).toBe(false);
-    }); 
+    });
 });
