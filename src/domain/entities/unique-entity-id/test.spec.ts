@@ -5,7 +5,7 @@ describe('Entity: UniqueEntityID', () => {
         const uniqueEntityID = new UniqueEntityID();
 
         expect(uniqueEntityID).toBeInstanceOf(UniqueEntityID);
-        expect(uniqueEntityID.id).toBeDefined();
+        expect(uniqueEntityID.value).toBeDefined();
     });
 
     it('should compare unique entity id', () => {

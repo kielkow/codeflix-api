@@ -24,7 +24,7 @@ export class Category {
     private _updatedAt?: Date;
 
     protected constructor(props: CategoryProps) {
-        this._id = props.id ? new UniqueEntityID(props.id).id : new UniqueEntityID().id;
+        this._id = props.id ? new UniqueEntityID(props.id).value : new UniqueEntityID().value;
         this._name = props.name;
         this._description = props.description;
         this._active = props.active || false;
