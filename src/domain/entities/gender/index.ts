@@ -1,4 +1,4 @@
-import crypto from 'node:crypto';
+import { UniqueEntityID } from '../unique-entity-id';
 
 export interface GenderProps {
     id?: string;
@@ -24,7 +24,7 @@ export class Gender {
     private _updatedAt?: Date;
 
     protected constructor(props: GenderProps) {
-        this._id = props.id || crypto.randomUUID();
+        this._id = props.id ? new UniqueEntityID(props.id).id : new UniqueEntityID().id;
         this._name = props.name;
         this._description = props.description;
         this._active = props.active || false;
