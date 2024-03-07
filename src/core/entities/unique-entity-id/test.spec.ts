@@ -14,4 +14,11 @@ describe('Entity: UniqueEntityID', () => {
 
         expect(uniqueEntityID1.equals(uniqueEntityID2)).toBe(false);
     });
+
+    it('should validate a new unique entity id', () => {
+        const uniqueEntityID1 = new UniqueEntityID();
+        const uniqueEntityID2 = new UniqueEntityID();
+
+        expect(uniqueEntityID1.validate(uniqueEntityID2)).toBe(true);
+    });
 });
