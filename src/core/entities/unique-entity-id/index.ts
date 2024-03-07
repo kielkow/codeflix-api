@@ -27,7 +27,7 @@ export class UniqueEntityID {
     return this._id === id._id
   }
 
-  public validate(id: UniqueEntityID): boolean {
+  public validate(id: unknown): boolean {
     return id instanceof UniqueEntityID
   }
 }

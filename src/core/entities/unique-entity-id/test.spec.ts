@@ -20,5 +20,6 @@ describe('Entity: UniqueEntityID', () => {
         const uniqueEntityID2 = new UniqueEntityID();
 
         expect(uniqueEntityID1.validate(uniqueEntityID2)).toBe(true);
+        expect(uniqueEntityID1.validate('invalid')).toBe(false);
     });
 });
