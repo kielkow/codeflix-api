@@ -33,6 +33,8 @@ export class Category {
     }
 
     static create(props: CreateCategoryProps): Category {
+        this.validate(props);
+
         return new Category(props);
     }
 
@@ -93,5 +95,19 @@ export class Category {
             createdAt: this._createdAt,
             updatedAt: this._updatedAt,
         };
+    }
+
+    private static validateName(name: string): boolean {
+        return name.length > 0 && name.length <= 100;
+    }
+    private static validateDescription(description: string): boolean {
+        return description.length > 0 && description.length <= 255;
+    }
+    public static validate(props: CreateCategoryProps) {
+        const validName = this.validateName(props.name);
+        if (!validName) throw new Error('Invalid category name');
+
+        const validDescription = this.validateDescription(props.description);
+        if (!validDescription) throw new Error('Invalid category description');
     }
 }
