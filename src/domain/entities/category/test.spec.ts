@@ -42,4 +42,13 @@ describe('Entity: Category', () => {
 
         expect(category.active).toBe(false);
     });
+
+    it('should throw an error when creating a category with invalid props', () => {
+        expect(() => {
+            Category.create({
+                name: 'C1',
+                description: 'Category 1 description',
+            });
+        }).toThrow();
+    });
 });
