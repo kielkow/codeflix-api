@@ -42,4 +42,13 @@ describe('Entity: Gender', () => {
 
         expect(gender.active).toBe(false);
     });
+
+    it('should throw an error when creating a gender with invalid props', () => {
+        expect(() => {
+            Gender.create({
+                name: 'G1',
+                description: 'Gender 1 description',
+            });
+        }).toThrow();
+    });
 });
